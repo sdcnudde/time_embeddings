@@ -1,4 +1,5 @@
 import gensim, logging
+import gensim_cust
 import pandas
 from six import iteritems
 from collections import defaultdict
@@ -28,7 +29,9 @@ start_time = time.time()
 dim = 64
 wdw = 20
 iter = 5
-model = gensim.models.Word2Vec(sentences, dates, sample=0, size=dim, window=wdw, min_count=1, sg=1, seed=42, hs=0, negative=5, iter=iter)
+model = gensim.models.Word2Vec(sentences, sample=0, size=dim, window=wdw, min_count=1, sg=1, seed=42, hs=0, negative=5, iter=iter)
+#model = gensim_cust.models.Word2Vec(sentences, dates, sample=0, size=dim, window=wdw, min_count=1, sg=1, seed=42, hs=0, negative=5, iter=iter)
+
 stop_time = time.time()
 print stop_time - start_time
 
