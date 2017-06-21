@@ -1,0 +1,3 @@
+TransformViewsToMFFormat.ipynb
+---
+Transforms (cid, pid, date) to (cid, pid, #views) for input in Matrix Factorization
