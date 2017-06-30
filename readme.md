@@ -1,4 +1,4 @@
-### Project Description
+# Project Description
 
 The sequence, time-independent model uses the standard gensim package.
 
