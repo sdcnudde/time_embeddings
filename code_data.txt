@@ -3,7 +3,7 @@ CODE
 1. Sample with productviewsampling.hql (script: time_embeddings/src/hql).
 
 
-2. Extract viewings from sampled data with time_embeddings/src/ipynb/ExtractViewingData.ipynb. Results in customer_product_date.csv and customer_labels.csv (data on blob sdcsparkrd01).
+2. Extract viewings from sampled data with time_embeddings/src/ipynb/ExtractViewingData.ipynb. Results in https://asoscustprofdevelopment.blob.core.windows.net/sdcsparkrd01/customer_product_date.csv and https://asoscustprofdevelopment.blob.core.windows.net/sdcsparkrd01/customer_labels.csv (data on blob sdcsparkrd01).
 
 
 3. Make CV folds with script time_embeddings/src/ipynb/MakeCrossValidationSplits.ipynb.
