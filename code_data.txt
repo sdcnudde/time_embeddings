@@ -1,0 +1,40 @@
+CODE
+
+1. Sample with productviewsampling.hql (script: time_embeddings/src/hql).
+
+
+2. Extract viewings from sampled data with time_embeddings/src/ipynb/ExtractViewingData.ipynb. Results in customer_product_date.csv and customer_labels.csv (data on blob sdcsparkrd01).
+
+
+3. Make CV folds with script time_embeddings/src/ipynb/MakeCrossValidationSplits.ipynb.
+
+
+4. Make labels for CLTV classification with code time_embeddings/src/ipynb/makeCLTVLabels.ipynb. Results in file labels_cltv.txt (on blob)
+
+
+5. For MF:
+
+- Convert customer_product_date.csv to Rating data (script: time_embeddings/src/ipynb/TransformViewsToMFFormat.ipynb). Results in customer_product_rating.csv (data on blob sdcspardrd01).
+
+
+- Do MF (script: time_embeddings/src/ipynb/DoMF.ipynb). Results in user embeddings (embeddings on blob sdcsparkrd01 in mf_2, mf_4, …, mf_512).
+
+
+- Evaluate vectors on extrinsic characteristics (script: time_embeddings/src/ipynb/evaluateMFEmbeddings.ipynb)
+
+
+6. For standard W2V:
+
+- Convert customer_product_date.csv to sentence file with script time_embeddings/src/ipynb/MakeSentenceFileSample.ipynb. Results in customer_sentences2.txt and dates2_sentences.csv (on USB).
+
+
+- Do W2V with script time_embeddings/src/python/word2vec.py. Results in embeddings w2v_output_dim_*_wdw_*_iter_*_skip_*.txt.
+
+- Evaluate vectors on extrinsic characteristics (script: time_embeddings/src/ipynb/evaluateEmbeddingsW2V.ipynb)
+
+
+7. For customized W2V with time:
+
+- Use dates2_sentences.csv and customer_sentence2.txt.
+
+- Use package gensim_cust (on blob sdcsparkrd01) with script time_embeddings/src/python/word2vec_time.py.
