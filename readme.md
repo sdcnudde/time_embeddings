@@ -11,7 +11,7 @@ The time dependency is modeled in /gensim_cust/models/word2vec_inner.pyx (method
 
 Before running the python code:
 
-'''
+```
 cython word2vec_inner.pyx (to compile .pyx file into C)
 gcc -l python2.7 -o word2vec_inner.c -c (to compile the resulting C file)
-'''
+```
